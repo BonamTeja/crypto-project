@@ -5,6 +5,7 @@ import EditProfile from '../Helpers/EditProfile'
 import Login from './Login'
 import Notification from '../Helpers/Notification'
 import ReferAndEarn from '../Helpers/ReferAndEarn'
+import PrivacyAndPolicy from '../Helpers/PrivacyAndPolicy'
 
 const Settings = (item) => {
   //var count=1;
@@ -46,6 +47,9 @@ const Settings = (item) => {
               </div>
               <div className='profile' style={showTab === 3 ? {display:'block'}:{display:'none'}}>
                 <ReferAndEarn />
+              </div>
+              <div className='profile' style={showTab === 4 ? {display:'block'}:{display:'none'}}>
+                <PrivacyAndPolicy />
               </div>
             </section>
           </section>
