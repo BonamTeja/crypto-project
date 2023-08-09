@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -7,8 +8,23 @@ const Footer = () => {
         <footer>
           <div className= "container-fluid" style={{backgroundColor:"black", color:"white"}}>
             <div className='container'>
-              <div className="row py-2">
-                <div className="col-6 col-md-2 mb-3">
+              <div className="row py-2 align-items-center">
+                <div className="col-6 col-md-4 mb-3">
+                  <label className='h3'>Crypto Clash</label><sub style={{}}>-A battlefield of Crypto Coins.</sub>
+                </div>
+
+                <div className="col-6 col-md-4 mb-3">
+                  <h5>Company</h5>
+                  <ul className="nav flex-column">
+                    <li className="nav-item mb-2"><Link to='/home' className="nav-link p-0" style={{color:"whitesmoke"}}>Home</Link></li>
+                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>Features</a></li>
+                    <li className="nav-item mb-2"><Link to='/allcoins' className="nav-link p-0" style={{color:"whitesmoke"}}>Pricing</Link></li>
+                    <li className="nav-item mb-2"><Link to='/careers' className="nav-link p-0" style={{color:"whitesmoke"}}>Careers</Link></li>
+                    <li className="nav-item mb-2"><Link to='/about' className="nav-link p-0" style={{color:"whitesmoke"}}>About</Link></li>
+                  </ul>
+                </div>
+
+                <div className="col-6 col-md-4 mb-3">
                   <h5>Section</h5>
                   <ul className="nav flex-column">
                     <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>Home</a></li>
@@ -17,31 +33,6 @@ const Footer = () => {
                     <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>FAQs</a></li>
                     <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>About</a></li>
                   </ul>
-                </div>
-
-                <div className="col-6 col-md-2 mb-3">
-                  <h5>Section</h5>
-                  <ul className="nav flex-column">
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>Home</a></li>
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>Features</a></li>
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>Pricing</a></li>
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>FAQs</a></li>
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>About</a></li>
-                  </ul>
-                </div>
-
-                <div className="col-6 col-md-2 mb-3">
-                  <h5>Section</h5>
-                  <ul className="nav flex-column">
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>Home</a></li>
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>Features</a></li>
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>Pricing</a></li>
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>FAQs</a></li>
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>About</a></li>
-                  </ul>
-                </div>
-                <div className="col-md-5 offset-md-1 mb-3">
-
                 </div>
               </div>
             </div>
@@ -49,7 +40,7 @@ const Footer = () => {
 
           <div style={{backgroundColor:"rgb(80,80,80)", color:"white"}}>
             <div className="container d-flex flex-column flex-sm-row justify-content-between py-1">
-              <p>© 2023 Company, Inc. All rights reserved.</p>
+              <p>© 2023 Crypto Clash, Inc. All rights reserved.</p>
               <ul className="list-unstyled d-flex">
                 <li className='ms-3' ><a className="link-body-emphasis" href="#"><i className="fa fa-instagram fa-lg" style={{color:"white"}} aria-hidden="true"></i></a></li>
                 <li className='ms-3' ><a className="link-body-emphasis" href="#"></a><i className="fa fa-facebook-square fa-lg" aria-hidden="true"></i></li>
