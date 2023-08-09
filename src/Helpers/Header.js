@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 
 const Header = () => {
     const listItem = useSelector((state) => state.list.Watchlist);
     const data = useSelector((state) => state.editpage.edit)
     const registerItems = useSelector((state) => state.register.register)
-    //const editItems = useSelector((state) => state.editpage.edit)
     
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     let count = 0;
     for(let item of listItem){
@@ -16,47 +17,49 @@ const Header = () => {
     }
     const logoutFunction = (e) =>{
         alert("If you logout, You will directed to Login or Register Page.")
+        //navigate('/login')
     }
+    
   return (
     <React.Fragment>
         <nav className="navbar navbar-expand-lg" style={{backgroundColor:" #f0f0f0"}}>
             <main className="container-fluid">
-                <Link className="navbar-brand fw-bold" to="/">Crypto Clash</Link>
+                <NavLink className="navbar-brand fw-bold" to="/">Crypto Clash</NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <section className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                        <Link className="nav-link active" aria-current="page" to="/home">Home</Link>
+                            <NavLink className="nav-link" style={({ isActive }) => ({backgroundColor: isActive?'white':'none',borderRadius: isActive ? "8px" :"none"})} aria-current="page" to="/home">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link" to="/about">About</Link>
+                            <NavLink className="nav-link"  to="/about" style={({ isActive }) => ({backgroundColor: isActive?'white':'none',borderRadius: isActive ? "8px" :"none"})}>About</NavLink>
                         </li>
                         <li className="nav-item dropdown">
-                        <Link className="nav-link" to="/dashboard">Dashboard</Link>
+                            <NavLink className="nav-link" to="/dashboard" style={({ isActive }) => ({backgroundColor: isActive?'white':'none',borderRadius: isActive ? "8px" :"none"})}>Dashboard</NavLink>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link" to='/settings'>Settings</Link>
+                            <NavLink className="nav-link" to='/settings' style={({ isActive }) => ({backgroundColor: isActive?'white':'none',borderRadius: isActive ? "8px" :"none"})}>Settings</NavLink>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link" to='/allCoins'>All Coins</Link>
+                            <NavLink className="nav-link" to='/allCoins' style={({ isActive }) => ({backgroundColor: isActive?'white':'none',borderRadius: isActive ? "8px" :"none"})}>All Coins</NavLink>
                         </li>
                         <li className="nav-item">
-                        <Link className="nav-link" to='/portfolio'>Portfolio</Link>
+                            <NavLink className="nav-link" to='/portfolio' style={({ isActive }) => ({backgroundColor: isActive?'white':'none',borderRadius: isActive ? "8px" :"none"})}>Portfolio</NavLink>
                         </li>
 
                     </ul>
                     <article className="d-flex text-center">
                         <ul className='navbar-nav nav-pills me-auto mb-2 mb-lg-0'>
                             <li className="nav-item mx-2 my-1">
-                                <Link className='btn btn-danger text-white fw-bold' to='/list'>Watchlist({count})</Link>
+                                <NavLink className='btn btn-danger text-white fw-bold' to='/list'>Wishlist({count})</NavLink>
                             </li>
                             <li className="nav-item mx-2 my-1">
-                                <Link className="nav-link" id='login_header' onClick={(e) => logoutFunction(e)}>Logout</Link>
+                                <NavLink className="nav-link" id='login_header' to='/login' onClick={(e) => logoutFunction(e)}>Logout</NavLink>
                             </li>
                             <li className="nav-item my-1">
-                                <Link className="nav-link" id='register_header' to='/'>Register</Link>
+                                <NavLink className="nav-link" id='register_header' to='/'>Register</NavLink>
                             </li>
                         </ul>
                     </article>
