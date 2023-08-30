@@ -53,9 +53,11 @@ const Portfolio = () => {
     }
 
     const costFunction = (item) =>{
-      const initial = cost.priceAmount/item.cost
+      const initial = cost.priceAmount/item.currentPrice
       const newCost ={...item,cost:Number(cost.priceAmount),initialValue:Number(initial),price:item.currentPrice}
       console.log(newCost)
+      console.log(item.currentPrice,'iii')
+      console.log(cost.priceAmount,'ccc')
       console.log(((Number(item.currentPrice))*(Number(item.initialValue))).toFixed(4))
       dispatch(buyItem(newCost))
     }
@@ -165,7 +167,7 @@ const Portfolio = () => {
                                       <h3 ><img src={item.iconUrl} alt='...' style={{width:'30px',height:'30px'}} /> {item.name}</h3>
                                       <figcaption className='text-secondary fw-bold'>({item.symbol})</figcaption>
                                   </figure>
-                                  <h5 className='text-secondary'>Price : $ {Number(item.price).toFixed(5)}</h5>
+                                  <h5 className='text-secondary'>Price : $ {Number(item.currentPrice).toFixed(5)}</h5>
                                   <form onSubmit={submitPrice}>
                                       <section className='form-group my-1'>
                                           <label className='fs-5 my-1'>Enter Amount in USD: </label>
