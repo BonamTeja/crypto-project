@@ -5,12 +5,18 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import AccordinTable from '../elements/AccordinTable';
 const PrivacyAndPolicy = () => {
   const [expanded, setExpanded] = useState(false);
 
   const handleChange = (panel) =>(event,isExpanded) =>{
     setExpanded(isExpanded ? panel:false)
   }
+
+  const Privacydata = [
+    {id:1, title:'Information You Provide to Us', categoryHead:'Information Category', descriptionHead:'Description', category:[{categoryOne:'Basic Customer Information',descriptionOne:['Name, Address, Date of birth, Nationality, Country of residence, Gender, Phone number, Email Address.']}, { categoryOne:'Supplemental Identification Information', descriptionOne:['Utility bills (for your billing address), Photographs and/or videos, Government-issued identity document, e.g. passport, driver’s license, or state identification card, Social security number, Employment information (e.g. company name), Proof of residency, including visa information.']}],},
+    {id:2, title:'Information Collected Automatically', categoryHead:'Information Category', descriptionHead:'Description', category:[{categoryOne:'App, browser, and device information.', descriptionOne:['Information about the device, operating system, and browser you’re using Other device characteristics or identifiers (e.g. plugins, the network you connect to) IP address.']},{categoryOne:'Product Usage Information', descriptionOne:[{heading:'Activity information:', description:'Information about what you view or click on while visiting our Sites and Apps and how you use our Services.'},{heading:'Diagnostic and Troubleshooting Information:',description:'Information about how our Services are performing when you use them, i.e. service-related diagnostic and performance information, including timestamps, crash data, website performance logs, and error messages or reports.'}]}]},
+  ]
   return (
     <React.Fragment>
       <article className='text-bg-light rounded-5 my-3 p-4'>
@@ -38,73 +44,10 @@ const PrivacyAndPolicy = () => {
             <li>We offer privacy tools for you to request access to or deletion of information we hold about you. You can use these tools by visiting your Privacy Rights Dashboard. Depending on where you live, you may also have other privacy rights under law.</li>
             <li>If you have any questions, please contact us on our Support Portal or at dpo@Crypto Clash.com. <Link to='#' style={{textDecoration:'none'}}>See Section 9. How to Contact Us With Questions</Link> for more information.</li>
           </ul>
-          <section style={{}}>
+          <section>
             <h2>What Information We Collect</h2>
             <p>We collect the following personal information and documentation:</p><hr/>
-            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography><h5>Information You Provide to Us</h5></Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  <table className='table table-striped table-bordered'>
-                    <thead>
-                      <tr>
-                        <th>Information Category</th>
-                        <th>Description</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Basic Customer Information</td>
-                        <td>Name, Address, Date of birth, Nationality, Country of residence, Gender, Phone number, Email Address </td>
-                      </tr>
-                      <tr>
-                        <td>Supplemental Identification Information</td>
-                        <td>Utility bills (for your billing address), Photographs and/or videos, Government-issued identity document, e.g. passport, driver’s license, or state identification card, Social security number, Employment information (e.g. company name), Proof of residency, including visa information</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Accordion sx={{marginTop:'15px'}} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel2a-content"
-                id="panel2a-header"
-                
-              >
-                <Typography><h5>Information Collected Automatically</h5></Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  <table className='table table-striped table-bordered'>
-                    <thead>
-                      <tr>
-                        <th>Information Category</th>
-                        <th>Description</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>App, browser, and device information</td>
-                        <td>Information about the device, operating system, and browser you’re using Other device characteristics or identifiers (e.g. plugins, the network you connect to) IP address </td>
-                      </tr>
-                      <tr>
-                        <td>Product Usage Information</td>
-                        <td><p><b>Activity information:</b> Information about what you view or click on while visiting our Sites and Apps and how you use our Services</p>
-                        <p><b>Diagnostic and Troubleshooting Information:</b> Information about how our Services are performing when you use them, i.e. service-related diagnostic and performance information, including timestamps, crash data, website performance logs, and error messages or reports</p></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
+            <AccordinTable Privacydata={Privacydata} />
           </section>
         </article>
       </article>

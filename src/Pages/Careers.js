@@ -14,46 +14,46 @@ import { useState } from 'react';
 import Accordin from '../common/Accordin';
 import CareerCard from '../elements/CareerCard';
 const Careers = () => {
-    const mainDataOne = {
-        id:1,
-        title:'Business Development & Patnerships',
-        label:'5 openings'
-    }
-    const dataItemsOne = [
-        {workRole:'Head, Mobile Business Development',workLocation:'Dublin, Ireland'},
-        {workRole:'Head, Mobile Business Development',workLocation:'Berlin, Germany'},
-        {workRole:'Head, Mobile Business Development',workLocation:'London, UK'},
-        {workRole:'Operations Manager',workLocation:'London, UK'},
-        {workRole:'Operations Manager',workLocation:'Remote, UK'},
+
+    const data = [
+        {
+            id:1,
+            mainData:{
+                        title:'Business Development & Patnerships',
+                        label:'5 openings'},
+            dataItems:[
+                {workRole:'Head, Mobile Business Development',workLocation:'Dublin, Ireland'},
+                {workRole:'Head, Mobile Business Development',workLocation:'Berlin, Germany'},
+                {workRole:'Head, Mobile Business Development',workLocation:'London, UK'},
+                {workRole:'Operations Manager',workLocation:'London, UK'},
+                {workRole:'Operations Manager',workLocation:'Remote, UK'},
+            ],
+
+        },
+        {
+            id:2,
+            mainData:{
+                title:'Business Operations & Strategy',
+                label:'2 openings'
+            },
+            dataItems:[
+                {workRole:'Business Operations & Strategy Associate', workLocation:'Remote, USA'},
+                {workRole:'Business Operations & Strategy Senior Associate', workLocation:'Remote, USA'}
+            ],
+        },
+        {
+            id:3,
+            mainData:{
+                title:'IT',
+                label:'3 openings',
+            },
+            dataItems:[
+                {workRole:'Senior Network Engineer', workLocation:'Remote, USA'},
+                {workRole:'Site Reliability Engineer - Identity Platform', workLocation:'Remote, USA'},
+                {workRole:'Staff Site Reliability Engineer - Client Platform', workLocation:'Remote, USA'},
+            ],
+        },
     ]
-
-    const mainDataTwo = {
-        id:2,
-        title:'Business Operations & Strategy',
-        label:'2 openings'
-    }
-
-    const dataItemsTwo = [
-        {workRole:'Business Operations & Strategy Associate', workLocation:'Remote, USA'},
-        {workRole:'Business Operations & Strategy Senior Associate', workLocation:'Remote, USA'}
-    ]
-
-    const mainDataThree = {
-        id:3,
-        title:'IT',
-        label:'3 openings'
-    }
-
-    const dataItemsThree = [
-        {workRole:'Senior Network Engineer', workLocation:'Remote, USA'},
-        {workRole:'Site Reliability Engineer - Identity Platform', workLocation:'Remote, USA'},
-        {workRole:'Staff Site Reliability Engineer - Client Platform', workLocation:'Remote, USA'},
-    ]
-    const [flag, setFlag] = useState()
-    const handleFunction = (p) =>{
-        setFlag(p)
-    }
-
     const careerData = [
         {
             id:1,
@@ -92,9 +92,7 @@ const Careers = () => {
             </section>
             <section style={{margin:'10px auto',width:'98%'}}>
                 <h3 style={{textAlign:'center',paddingBottom:'15px',borderBottom:'8px solid #ddd',borderRadius:'5px'}}>Choose your team</h3>
-                <Accordin expand={flag} mainData={mainDataOne} dataItems={dataItemsOne} handleFunction={handleFunction} />
-                <Accordin expand={flag} mainData={mainDataTwo} dataItems={dataItemsTwo} handleFunction={handleFunction} />
-                <Accordin expand={flag} mainData={mainDataThree} dataItems={dataItemsThree} handleFunction={handleFunction} />
+                <Accordin data={data}/>
             </section>
         </article>
         <Footer />

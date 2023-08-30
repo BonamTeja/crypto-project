@@ -1,6 +1,10 @@
 import React from 'react'
 
 const ReferAndEarn = () => {
+  const Rewards = [
+    {className:'fa fa-lock fa-5x', text:'Unlocks on completing INR 10,000 deposit'},
+    {className:'fa fa-lock fa-5x', text:'Unlocks on 1st successful referral'},
+  ]
   return (
     <React.Fragment>
         <article className='container my-3'>
@@ -30,14 +34,12 @@ const ReferAndEarn = () => {
             <div style={{marginTop:"20px"}}>
               <h4>Your Rewards</h4>
               <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-                <div style={{width:'49%',backgroundColor:'#ddd',textAlign:'center',borderRadius:'10px'}}>
-                  <i class="fa fa-lock fa-5x" style={{color:'#444488'}} aria-hidden="true"></i>
-                  <p>Unlocks on completing INR 10,000 deposit</p>
-                </div>
-                <div style={{width:'49%',backgroundColor:'#ddd',textAlign:'center',borderRadius:'10px'}}>
-                  <i class="fa fa-lock fa-5x" style={{color:'#444488'}} aria-hidden="true"></i>
-                  <p>Unlocks on 1st successful referral</p>
-                </div>
+                {
+                  Rewards && Rewards.map((item, index) => <div key={index} style={{width:'49%',backgroundColor:'#ddd',textAlign:'center',borderRadius:'10px'}}>
+                    <i className={`${item.className}`} style={{color:'#444488'}} aria-hidden="true"></i>
+                    <p>{item.text}</p>
+                  </div>)
+                }
               </div>
             </div>
         </article>
