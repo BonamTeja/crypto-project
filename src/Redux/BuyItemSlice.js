@@ -15,7 +15,7 @@ const BuyItemSlice = createSlice({
             console.log(itemExists)
             if(itemExists > -1){
                 state.buyProducts[itemExists].cost += Number(action.payload.cost)
-                state.buyProducts[itemExists].initialValue = state.buyProducts[itemExists].cost/action.payload.price
+                state.buyProducts[itemExists].initialValue += Number(action.payload.initialValue) 
                 state.buyProducts[itemExists].price = ((((Number(state.buyProducts[itemExists].cost)-Number(action.payload.cost))*Number(state.buyProducts[itemExists].price))+(Number(action.payload.cost)*Number(action.payload.price)))/Number(state.buyProducts[itemExists].cost))
                 toast.success("You Successfully Updated CryptoCoin Price", {
                     position: "bottom-right",

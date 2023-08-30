@@ -20,10 +20,11 @@ const Login = () => {
   useEffect(() => {
     axios.get('https://form-7f306-default-rtdb.firebaseio.com/register.json').then((response) => {
       let data = Object.values(response.data);
+      // console.log(data,'rrr')
       let list =[]
       data.map(key => list.push(data))
       setData(data)
-      console.log(data)
+      console.log(data , "data response from firebase")
     })
   },[])
 
@@ -91,11 +92,11 @@ const Login = () => {
   //console.log(myId,'outside')
   return (
     <React.Fragment>
-      <figure class="text-center">
-        <blockquote class="blockquote">
+      <figure className="text-center">
+        <blockquote className="blockquote">
           <h1 className='fw-bold' style={{color:'blue'}}>Crypto Clash</h1>
         </blockquote>
-        <figcaption class="blockquote-footer ms-5" style={{color:'red'}}>
+        <figcaption className="blockquote-footer ms-5" style={{color:'red'}}>
           A platform of war of <cite title="Source Title">Digital Currencies</cite>
         </figcaption>
         <p>Most popular crypto app in World and one of the best crypto apps for beginners.</p>
