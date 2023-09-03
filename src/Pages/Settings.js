@@ -6,6 +6,7 @@ import Login from './Login'
 import Notification from '../Helpers/Notification'
 import ReferAndEarn from '../Helpers/ReferAndEarn'
 import PrivacyAndPolicy from '../Helpers/PrivacyAndPolicy'
+import HelpAndSupport from '../Helpers/HelpAndSupport'
 
 const Settings = (item) => {
   //var count=1;
@@ -23,6 +24,8 @@ const Settings = (item) => {
   const displayProfile = (e) =>{
     setShowTab(e)
   }
+
+  const components = [<EditProfile />, <Notification/>, <ReferAndEarn />, <PrivacyAndPolicy />, <HelpAndSupport />]
   
   return (
     <React.Fragment>
@@ -39,18 +42,11 @@ const Settings = (item) => {
               </ul>
             </aside>
             <section className='col-md-9' style={{backgroundColor:'beige'}}>
-              <div className='profile' style={(showTab === 1) ? {display:'block'}:{display:'none'}}>
-                <EditProfile />
-              </div>
-              <div className='profile' style={showTab === 2 ? {display:'block'}:{display:'none'}}>
-                <Notification />
-              </div>
-              <div className='profile' style={showTab === 3 ? {display:'block'}:{display:'none'}}>
-                <ReferAndEarn />
-              </div>
-              <div className='profile' style={showTab === 4 ? {display:'block'}:{display:'none'}}>
-                <PrivacyAndPolicy />
-              </div>
+              {
+                components && components.map((item, index) => <div key={index} className='profile' style={showTab === index+1 ? {display:'block'}:{display:'none'}}>
+                  {item}
+                </div> )
+              }
             </section>
           </section>
         </article>
