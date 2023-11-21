@@ -14,6 +14,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import EditProfile from './Helpers/EditProfile';
 import Careers from './Pages/Careers';
+import Ventures from './Pages/Ventures';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path='/portfolio' element={<Portfolio />} />
         <Route path='/edit' element={<EditProfile />} />
         <Route path='/careers' element={<Careers />} />
+        <Route path='/ventures' element={<Ventures />} />
       </Routes>
     </BrowserRouter>
   );

@@ -22,7 +22,7 @@ const Header = () => {
     
   return (
     <React.Fragment>
-        <nav className="navbar navbar-expand-lg" style={{backgroundColor:" #f0f0f0"}}>
+        <nav className="navbar navbar-expand-lg" style={{backgroundColor:" #f0f0f0", position:'sticky', top:0, width:'100%', zIndex:999}}>
             <main className="container-fluid">
                 <NavLink className="navbar-brand fw-bold" to="/">Crypto Clash</NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

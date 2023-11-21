@@ -13,6 +13,7 @@ const Register = () => {
   const[formData, setFormData] = useState(initialState);
   const[formErrors, setFormErrors] = useState({})
   const dispatch = useDispatch()
+  const [handlePassword, setHandlePassword] = useState(true);
 
   const handleInputs = (event) =>{
     if(event.target.name ==='terms'){
@@ -163,7 +164,20 @@ const Register = () => {
     var filter = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
     return String(pass).search (filter) != -1;
   }
-
+  const handleShowPassword = () => {
+    console.log(handlePassword,'cc')
+    if(formData.password.length > 0){
+      document.getElementById('PassWord').type = "text"
+      setHandlePassword(!handlePassword)
+    }
+ }
+  const handleHidePassword = () => {
+    console.log(handlePassword,'ooo')
+    if(formData.password.length > 0){
+      document.getElementById('PassWord').type = "password"
+      setHandlePassword(!handlePassword)
+    }
+  }
   return (
     <React.Fragment>
       <figure class="text-center">
@@ -194,9 +208,11 @@ const Register = () => {
             </section>
 
             {/* Password field */}
-            <section className='form-group my-1'>
+            <section className='form-group my-1' id='passMain'>
               <label className='fs-5'>Password : </label>
-              <input type='password' name='password' onChange={handleInputs} onFocus={hideErrors} onBlur={checkErrors} className='form-control' value={formData.password}/>
+              <input type='password' name='password' id='PassWord' onChange={handleInputs} onFocus={hideErrors} onBlur={checkErrors} className='form-control' value={formData.password}/>
+              {handlePassword ? <i class="fa fa-eye" aria-hidden="true" id='eyeOpen' onClick={handleShowPassword}></i>:
+              <i class="fa fa-eye-slash" aria-hidden="true" id='eyeClose' onClick={handleHidePassword}></i>}
               {formErrors.password ? <small className='text-danger'>{formErrors.password}</small>:null}
             </section>
 

@@ -80,6 +80,15 @@
 #profile{
   display: none;
 }
+#passMain{
+  position: relative;
+}
+#eyeOpen, #eyeClose{
+  position: absolute;
+  left: 95%;
+  top:60%;
+  cursor: pointer;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
