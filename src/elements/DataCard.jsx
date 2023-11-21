@@ -8,14 +8,14 @@ const DataCard = (props) => {
     const dispatch = useDispatch();
   return (
     <div className={`${className}`}>
-        <div className="card">
-            <h5 className="card-header bg-primary text-white">{title}</h5>
-            <div className="card-body">
-                <table className='table_1'>
-                    <thead>
-                        <tr className='text-black'>
-                            <th>Coin Name</th>
-                            <th>Price</th>
+      <div className="card">
+        <h5 className="card-header bg-primary text-white">{title}</h5>
+          <div className="card-body">
+            <table className='table_1'>
+              <thead>
+                <tr className='text-black'>
+                  <th>Coin Name</th>
+                  <th>Price</th>
                             <th>Change in Price(%)</th>
                             <th>Watchlist</th>
                         </tr>

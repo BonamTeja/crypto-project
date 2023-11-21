@@ -17,7 +17,7 @@ const Footer = () => {
                   <h5>Company</h5>
                   <ul className="nav flex-column">
                     <li className="nav-item mb-2"><Link to='/home' className="nav-link p-0" style={{color:"whitesmoke"}}>Home</Link></li>
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>Features</a></li>
+                    <li className="nav-item mb-2"><Link to="/ventures" className="nav-link p-0" style={{color:"whitesmoke"}}>Ventures</Link></li>
                     <li className="nav-item mb-2"><Link to='/allcoins' className="nav-link p-0" style={{color:"whitesmoke"}}>Pricing</Link></li>
                     <li className="nav-item mb-2"><Link to='/careers' className="nav-link p-0" style={{color:"whitesmoke"}}>Careers</Link></li>
                     <li className="nav-item mb-2"><Link to='/about' className="nav-link p-0" style={{color:"whitesmoke"}}>About</Link></li>
@@ -28,7 +28,7 @@ const Footer = () => {
                   <h5>Section</h5>
                   <ul className="nav flex-column">
                     <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>Home</a></li>
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>Features</a></li>
+                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>Ventures</a></li>
                     <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>Pricing</a></li>
                     <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>FAQs</a></li>
                     <li className="nav-item mb-2"><a href="#" className="nav-link p-0" style={{color:"whitesmoke"}}>About</a></li>

@@ -37,7 +37,7 @@ const HelpAndSupport = () => {
                     <h2><i class="fa fa-bolt" aria-hidden="true"></i> Top Articles</h2>
                     <div className='row justify-content-between' style={{margin:'10px 0px'}}>
                         {
-                            newsData && newsData.map((item,index) => index <5 ? <Link to={item.url} className='col-5 link_color' style={{textDecoration:'none', color:'#666', fontWeight:'bold' , display:'flex', alignItems:'center', justifyContent:'space-between'}}> <span style={{marginRight:'10px'}}>{item.text}</span> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            newsData && newsData.map((item,index) => index <5 ? <Link to={item.url} className='col-5 mt-3 link_color' style={{textDecoration:'none', color:'#666', fontWeight:'bold' , display:'flex', alignItems:'center', justifyContent:'space-between'}}> <span style={{marginRight:'10px'}}>{item.text}</span> <i class="fa fa-chevron-right" aria-hidden="true"></i>
                                 </Link>:null )
                         }
                     </div>
