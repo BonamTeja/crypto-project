@@ -69,7 +69,7 @@ const Register = () => {
           Id: registerData?.length + 1
           // password: hashedPassword,
         };
-        const apiurl = "http://localhost:5500/users/register";
+        const apiurl = "https://crypto-backend-zspp.onrender.com/users/register";
         const response = await fetch(apiurl, {
           method: "POST",
           headers: {
