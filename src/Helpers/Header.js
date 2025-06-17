@@ -26,7 +26,7 @@ const Header = () => {
   const removeFunction = async (e, account) => {
     try {
       console.log(account, "removeItem");
-      const response = await fetch("http://localhost:5500/users/removeuser", {
+      const response = await fetch("https://crypto-backend-zspp.onrender.com/users/removeuser", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

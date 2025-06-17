@@ -21,7 +21,7 @@ const Login = () => {
   console.log(registerData, 'regis')
 
   useEffect(() => {
-    axios.get("http://localhost:5500/users/login").then((response) => {
+    axios.get("https://crypto-backend-zspp.onrender.com/users/login").then((response) => {
       // console.log(response, 'response')
       // let data = Object.values(response.data);
       // console.log(data,'rrr')
@@ -42,7 +42,7 @@ const Login = () => {
   const checkData = async (event) => {
     try {
       event.preventDefault();
-      const res = await fetch('http://localhost:5500/users/login')
+      const res = await fetch('https://crypto-backend-zspp.onrender.com/users/login')
       const result = await res.json()
       setData(res)
       if (validateForm()) {
