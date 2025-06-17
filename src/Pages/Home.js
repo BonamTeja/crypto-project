@@ -15,7 +15,8 @@ import LinearProgress from '@mui/material/LinearProgress';
 
 
 const Home = () => {
-  
+  const registerData = useSelector((state) => state?.register?.register)
+  console.log(registerData, 'regis1')
   // if( cryptoData && cryptoData.length > 0){
   //   const cryptoTop = cryptoData && cryptoData.filter((item) => Number(item.change) > 0).sort(function(a,b) {
   //     return b.change - a.change
