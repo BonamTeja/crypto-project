@@ -1,12 +1,8 @@
 import React, { createContext, useEffect, useState } from "react";
-import Header from "../Helpers/Header";
 import axios from "axios";
-import Home from "./Home";
 import { Link, useNavigate } from "react-router-dom";
-import EditProfile from "../Helpers/EditProfile";
 import { useDispatch, useSelector } from "react-redux";
 import { editForm } from "../Redux/EditSlice";
-import bcrypt from "bcryptjs";
 
 export const loginContext = createContext();
 const Login = () => {
@@ -71,7 +67,6 @@ const Login = () => {
     } catch (error) {
       console.log(error, "Error");
     }
-    //console.log(flag,'flag')
   };
   const hideErrors = (event) => {
     setLoginErrors({
