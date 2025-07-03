@@ -1,19 +1,14 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Header from '../Helpers/Header';
 import Footer from '../Helpers/Footer';
-import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../Redux/CryptoSlice';
 import { addToWatchlist } from '../Redux/WatchlistSlice';
 import image1 from '../images/crypto.jpg';
-import { useLocation } from 'react-router-dom';
 
 
 
 const Home = () => {
-  //const  {state} = useLocation()
-  //const flag = state
-  //console.log(state,'lll')
   const data = useSelector((state) => state.crypto)
   const cryptoData = (data && data.cryptoCoins && data.cryptoCoins && data.cryptoCoins.data && data.cryptoCoins.data.coins != null) && (data && data.cryptoCoins && data.cryptoCoins && data.cryptoCoins.data && data.cryptoCoins.data.coins.length > 0) ? data.cryptoCoins.data.coins : null;
   console.log(cryptoData)
@@ -31,18 +26,6 @@ const Home = () => {
     }
     
   })
-  // if( cryptoData && cryptoData.length > 0){
-  //   const cryptoTop = cryptoData && cryptoData.filter((item) => Number(item.change) > 0).sort(function(a,b) {
-  //     return b.change - a.change
-  //   })
-  //   // let sortedArray = cryptoTop.sort(function(a,b) {
-  //   //   return b.change - a.change
-  //   // })
-  //   // console.log(sortedArray)
-  //   setResponse(cryptoTop)
-  // }
- 
-  // console.log(response)
   return (
     <React.Fragment>
         <Header />
