@@ -1,13 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React from 'react'
 import Header from '../Helpers/Header';
 import Footer from '../Helpers/Footer';
-import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchData } from '../Redux/CryptoSlice';
-import { addToWatchlist } from '../Redux/WatchlistSlice';
 import image1 from '../images/crypto.jpg';
-import { useLocation } from 'react-router-dom';
-import DataCard from '../elements/DataCard';
 import image2 from '../images/about_landing.png';
 import LinearProgress from '@mui/material/LinearProgress';
 
@@ -15,20 +9,6 @@ import LinearProgress from '@mui/material/LinearProgress';
 
 
 const Home = () => {
-  const registerData = useSelector((state) => state?.register?.register)
-  console.log(registerData, 'regis1')
-  // if( cryptoData && cryptoData.length > 0){
-  //   const cryptoTop = cryptoData && cryptoData.filter((item) => Number(item.change) > 0).sort(function(a,b) {
-  //     return b.change - a.change
-  //   })
-  //   // let sortedArray = cryptoTop.sort(function(a,b) {
-  //   //   return b.change - a.change
-  //   // })
-  //   // console.log(sortedArray)
-  //   setResponse(cryptoTop)
-  // }
- 
-  // console.log(response)
   const visionData = [
     {id:1, color:'warning', text:'We believe that crypto investing should be as easy as ordering food online.'},
     {id:2, color:'primary', text:'We’ve centred our Vision around creating an investment ecosystem that simplifies investment.'},
