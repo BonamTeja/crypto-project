@@ -4,6 +4,7 @@ import WatchlistSlice from "./WatchlistSlice";
 import BuyItemSlice from "./BuyItemSlice";
 import EditSlice from "./EditSlice";
 import RegisterSlice from "./RegisterSlice";
+import NewsSlice from "./NewsSlice";
 
 const store = configureStore({
     reducer:{
@@ -12,6 +13,7 @@ const store = configureStore({
         itemscart:BuyItemSlice,
         editpage:EditSlice,
         register:RegisterSlice,
+        cryptoNews: NewsSlice,
     }
 });
 export default store;

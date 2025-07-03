@@ -4,7 +4,7 @@ import Header from '../Helpers/Header'
 import Footer from '../Helpers/Footer'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteAll, removeItems } from '../Redux/WatchlistSlice'
-import BuyOrSell from '../Button/BuyOrSell';
+import Button from '../common/Button';
 
 const Watchlist = () => {
   const listItems = useSelector((state) => state.list.Watchlist)
@@ -45,8 +45,7 @@ const Watchlist = () => {
                   {Number(item.change) > 0 ? <td className='text-success fw-bold'>+{Number(item.change)}</td>:<td className='text-danger fw-bold'>{Number(item.change)}</td> }
                   <td>
                     <div className="d-flex text-center">
-                      <button className='btn btn-danger' onClick={() =>dispatch(removeItems(item))}>x</button>
-                      {/*<BuyOrSell item ={item}/> */}
+                      <Button className='btn btn-danger' title="x" item={item} />
                     </div>
                   </td>
                 </tr>)
@@ -56,7 +55,9 @@ const Watchlist = () => {
               <tfoot>
                 <tr>
                   <td style={{textAlign:'right'}} colSpan={3}>Grand Total : $ {totalAmount.toFixed(2)}</td>
-                  <td><button className='btn btn-danger' onClick={() => dispatch(deleteAll())}>DeleteAll</button></td>
+                  <td>
+                    <Button className='btn btn-danger' title="DeleteAll" item='' />
+                  </td>
                 </tr>
               </tfoot>
             </table>:<p>Sorry! Items Not Found</p>

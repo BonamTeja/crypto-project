@@ -26,17 +26,17 @@ const EditProfile = () => {
     }
     console.log(Id,'jj')
     useEffect(()=>{
-        axios.get('https://form-7f306-default-rtdb.firebaseio.com/register.json').then((response)=>{
-            //console.log(response.data,'res')
-            let Data = Object.values(response.data);
+        axios.get('https://crypto-backend-zspp.onrender.com/users/login').then((response)=>{
+            console.log(response.data,'res')
+            let Data = Object.values(response?.data?.users);
             let list =[]
             Data.map(key => list.push(Data))
             console.log(Data,'resdatas')
             const loginData = Data.filter((item) => item.Id === Id)
-            console.log(loginData,'loginData')
+            console.log(loginData, 'loginData')
             //console.log(loginData[0].email,'loginData')
             setData(Data)
-            console.log(data,'data')
+            console.log(data,'data1234')
             setEditForm({
                 ...editform,
                 Id:loginData[0].Id,
@@ -82,7 +82,7 @@ const EditProfile = () => {
         console.log(editform,'editedForm')
         console.log('editedprofile',editform.Id)
         console.log('editedData',editedData)
-        axios.put('https://form-7f306-default-rtdb.firebaseio.com/register.json',editedData).then((res)=>{
+        axios.put('https://crypto-backend-zspp.onrender.com/users/update',editform).then((res)=>{
             alert('successfully Edited')
         })
         
